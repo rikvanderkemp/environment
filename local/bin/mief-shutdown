@@ -1,0 +1,19 @@
+#!/bin/bash
+
+CHOICE1=$(zenity --list \
+    --height=220 \
+    --title="List" \
+    --text="Options" \
+    --radiolist \
+    --column="" --column="Option" \
+    TRUE "Shutdown" \
+    FALSE "Restart")
+
+case $CHOICE1 in
+    "Shutdown")
+        systemctl poweroff
+    ;;
+    "Restart")
+        systemctl reboot
+    ;;
+esac  

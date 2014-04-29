@@ -1,0 +1,10 @@
+#!/bin/bash
+
+zenity --question text="Are you sure?"
+
+
+case $? in
+    0)
+        openbox --exit
+    ;;
+esac  
