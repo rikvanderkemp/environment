@@ -1,0 +1,47 @@
+# no annoying audible bell, please
+vbell on
+
+# detach on hangup
+autodetach on
+
+# don't display the copyright page
+startup_message off
+
+# emulate .logout message
+pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$:nl:ended."
+
+# make the shell in every window a login shell
+shell -$SHELL
+
+# history buffer
+defscrollback 102400
+
+# don't kill window after the process died
+# zombie "^["
+
+################
+#
+# keybindings
+#
+
+#use '^]' in stead of '^a' the meta key
+escape "^]a"
+#remove some stupid / dangerous key bindings
+bind k
+bind ^k
+bind .
+bind ^\
+bind \\
+bind ^h
+bind h
+#make them better
+bind 'K' kill
+bind 'I' login on
+bind 'O' login off
+bind '}' history
+
+# right aligned
+#caption always "%=%-Lw%{= gw}%50>%n%f* %t%{-}%+Lw | %d/%m/%y %c:%s - %l"
+
+# left aligned (right aligned is nicer, but causes problems with very wide screens)
+caption always "%l - %Y/%m/%d %c:%s | %-Lw%{= gw}%50>%n%f* %t%{-}%+Lw"
